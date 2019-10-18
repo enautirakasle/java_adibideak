@@ -36,6 +36,7 @@ public class Adibidea9 {
 		for(int i=0; i < zenbakiak.length; i++){
 			System.out.println(zenbakiak[i]);
 		}
+
 	
 		
 		System.out.println();
@@ -46,6 +47,8 @@ public class Adibidea9 {
 			System.out.println(izenak[i]);
 			i++;
 		}
+
+
 		
 		
 		
