@@ -71,6 +71,7 @@ public class Adibidea11 {
 		int zenbakia = Integer.parseInt(scan.nextLine());
 		scan.close();
 		return zenbakia;
+
 	}
 	
 	
