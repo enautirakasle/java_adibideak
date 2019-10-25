@@ -1,0 +1,29 @@
+programazioko egiturak: sekuentzia, baldintzazkoa, iterazioa.
+
+aldagaia
+datu motak
+aldagai definizioa
+aldagaia hasieratzea (inicializar)
+asignasioa
+irakurketa
+
+metodoak: prozedurak eta funtzioak
+parametroak (erreala eta formala)
+return
+
+String. stringen metodoak
+
+array
+matrizea
+
+arraya errekorritu
+	arraya bete
+	arraya irakurri
+
+----Algoritmo garrantzitsuenak-----
+menu bat atera eta irten sakatu arte programan mantendu (do while; switch)
+arraya errekorritu (idazteko edo irakurtzeko)
+arrayko zerbaiten agerpenak kontatu
+arrayan zerbait badagoen esan
+arrayko elementuen batura, media, max, min
+
