@@ -12,6 +12,7 @@ public class Adibidea14 {
 	public static void main(String[] args) {
 		//fitxategia zabaldu
 		File fitxategia = new File("C:/Users/ikaslea/Desktop/datuak.txt");
+		File fitx1 = new File("datuak/datuak.txt");//ruta erlatiboa ikusi proiektuko karpeta
 		Scanner scan;
 		String[] lerroak = new String[100];
 		
