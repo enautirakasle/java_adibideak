@@ -39,6 +39,8 @@ public class LangabeziDatuak {
 				
 			}
 			
+			scan.close();
+			
 			//datuak pantailaratu
 			//datuakPantailaratu(herriak, langabetuak, probintziak);
 			
