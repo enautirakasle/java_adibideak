@@ -64,7 +64,9 @@ public class Kontrol1 {
 	}
 
 	private static void pizzaMasBarata(String[] pizzaIzenak, double[] pizzaPrezioak) {
-		double prezioMin = 0;
+
+		double prezioMin = pizzaPrezioak[0];
+
 		int indicePezioMin = 0;
 		for (int i = 0; i < pizzaPrezioak.length; i++) {
 			if(prezioMin > pizzaPrezioak[i]) {
