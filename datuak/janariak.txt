@@ -31,7 +31,7 @@ colrizada;cruda;33;3,20;0,40;5,20;hotaliza
 coliflor;cruda;28;2,30;0,20;5,04;hotaliza
 coliflor;cocidacrudo;20;1,90;0,70;3;hotaliza
 colinabo;crudo;33;2,20;0,10;6,8;hotaliza
-champi�on;crudo;27;3,7;0,20;3,70;hotaliza
+champiñon;crudo;27;3,7;0,20;3,70;hotaliza
 chirivia;crudo;5,8;1,50;0,50;13,50;hotaliza
 chirivia;cocidos;34;1,10;0,40;8,50;hotaliza
 escarola;crudo;20;1,60;0,20;4,00;hotaliza
@@ -104,9 +104,9 @@ nispero;zumo;80;0,8;0,8;22,3;frutafresca
 peras;crudo;58;0,7;0,4;16,8;frutafresca
 peras;asadas;75;0,8;0,1;25,2;frutafresca
 peras;conserva;51;0,3;0,08;13,7;frutafresca
-pi�a;nectar;51;0,45;0,2;13,6;frutafresca
-pi�a;crudas;76;0,4;0,1;19,8;frutafresca
-pi�a;conserva;51;0,3;0,1;13,1;frutafresca
+piña;nectar;51;0,45;0,2;13,6;frutafresca
+piña;crudas;76;0,4;0,1;19,8;frutafresca
+piña;conserva;51;0,3;0,1;13,1;frutafresca
 platano;jugocrudo;91;1,2;0,3;21,8;frutafresca
 ruibardo;crudo;16;0,5;0,1;3,8;frutafresca
 sandia;crudo;31;0,5;0,2;6,9;frutafresca
@@ -321,7 +321,7 @@ lomo magro;frito;316;19,6;28,1;0;cerdo
 manteca;crudo;877;0,8;98;0;cerdo
 pierna;asado;317;24,6;23,2;0;cerdo
 promedio;natural;736;3,9;80;0;cerdo
-ri�on;crudo;105;15,2;4,3;0,8;cerdo
+riñon;crudo;105;15,2;4,3;0,8;cerdo
 tocino;salado;763;6,6;80,2;0,7;cerdo
 corazon;crudo ;130;15,4;7,1;1;ternera
 costillas;crudo ;135;19,5;7,5;0,4;ternera
@@ -336,8 +336,8 @@ lechecillas;crudo ;103;17,6;3,8;0;ternera
 lechecillas;estofado;162;22,7;8,1;0;ternera
 lengua;estofado;190;15,9;14,8;0,1;ternera
 promedio;natural;184;19,1;12;0;ternera
-ri�on;cocido;102;15,4;4,8;0;ternera
-ri�on;frito;182;14,8;15,3;0;ternera
+riñon;cocido;102;15,4;4,8;0;ternera
+riñon;frito;182;14,8;15,3;0;ternera
 sesos;cocido;115;10,3;8,3;0,8;ternera
 solomillo;crudo ;93;19,3;1,6;2,3;ternera
 solomillo;asado;192;28,7;8,5;3,2;ternera
@@ -360,8 +360,8 @@ Higado;frito;229;26;9,1;9,5;vaca
 Lengua;crudo;210;15,8;16,3;0,4;vaca
 Lengua;cocido;239;19,3;15,3;0,5;vaca
 Promedio;cocido;268;17,5;22;0;vaca
-Ri�on;crudo;122;16,2;6;0,8;vaca
-Ri�on;cocido;165;27;5,4;0;vaca
+Riñon;crudo;122;16,2;6;0,8;vaca
+Riñon;cocido;165;27;5,4;0;vaca
 sangre;crudo;77;18,1;0,2;0;vaca
 sesos;crudo;120;10;8,5;0,8;vaca
 sesos;cocidos;126;10,4;9,2;0;vaca
