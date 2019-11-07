@@ -18,6 +18,8 @@ public class Janariak {
 		double[] karbohidratoak = new double[404];
 		String[] motak = new String[404];
 
+		
+		//datuen karga
 		File file = new File("datuak/janariak.txt");
 		try {
 			Scanner scan = new Scanner(file);
@@ -42,26 +44,24 @@ public class Janariak {
 				
 				i++;
 			}
-			
-			
-			//do{
-				//menua erakutsi
-				
-				//aukera irakurri
-				
-				//switcha
-				
-			//}while();
-			
-//			for(int j = 0; j< izenak.length; j++){
-//				System.out.println((j+1) + " " + izenak[j] +" "+ egoerak[j] + " " + motak[j]);
-//			}
-			
-			
+	
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		//datuen karga bukatu
+		
+		
+		//menua eta aukerak
+		
+		
+		
+		//datuak gorde
+		
+		
+		
+		
+
+	
 
 	}
 
