@@ -55,7 +55,7 @@ public class Janariak {
 		int aukera;
 		do {
 			// menua erakutsi
-			System.out.println("----MENUA----\n0-irten\n1- fruitu lehorrak zerrendatu");
+			System.out.println("----MENUA----\n0-irten\n1- fruitu lehorrak zerrendatu\n2- kaloria gehien dituena ikusi");
 
 			// aukera irakurri
 			aukera = Integer.parseInt(scanTeklatua.nextLine());
@@ -64,6 +64,9 @@ public class Janariak {
 			switch (aukera) {
 			case 1:
 				fruituLehorrakZerrendatu(izenak, egoerak, kaloriak, gantzak, proteinak, karbohidratoak, motak);
+				break;
+			case 2:
+				janariKalorikoenaBistaratu(izenak, egoerak, kaloriak, gantzak, proteinak, karbohidratoak, motak);
 				break;
 			case 0:
 				datuakGorde(izenak, egoerak, kaloriak, gantzak, proteinak, karbohidratoak, motak);
@@ -77,6 +80,21 @@ public class Janariak {
 		} while (aukera != 0);
 
 	}// main bukaera
+
+	private static void janariKalorikoenaBistaratu(String[] izenak, String[] egoerak, double[] kaloriak,
+			double[] gantzak, double[] proteinak, double[] karbohidratoak, String[] motak) {
+		
+		double kaloriaMax = 0;
+		int iMax = -1;
+		for(int i = 0; i < izenak.length; i++){
+			if(kaloriaMax < kaloriak[i]){
+				kaloriaMax = kaloriak[i];
+				iMax = i;
+			}
+		}
+		System.out.println(izenak[iMax] +  " " + egoerak[iMax] + ": " + kaloriak[iMax] + " cal");
+		
+	}
 
 	private static void datuakGorde(String[] izenak, String[] egoerak, double[] kaloriak, double[] gantzak,
 			double[] proteinak, double[] karbohidratoak, String[] motak) {
