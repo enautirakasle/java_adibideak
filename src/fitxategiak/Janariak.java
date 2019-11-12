@@ -2,6 +2,7 @@ package fitxategiak;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Janariak {
@@ -62,10 +63,10 @@ public class Janariak {
 			// switch batekin aukera bakoitza inplementatu
 			switch (aukera) {
 			case 1:
-				fruituLehorrakZerrendatu(izenak, egoerak, kaloriak, gantzak, proteinak,karbohidratoak, motak);
+				fruituLehorrakZerrendatu(izenak, egoerak, kaloriak, gantzak, proteinak, karbohidratoak, motak);
 				break;
 			case 0:
-
+				datuakGorde(izenak, egoerak, kaloriak, gantzak, proteinak, karbohidratoak, motak);
 				System.out.println("Programa zarratzera doa...");
 				break;
 			default:
@@ -75,23 +76,45 @@ public class Janariak {
 
 		} while (aukera != 0);
 
-		//TODO datuak gorde
+	}// main bukaera
 
-	}//main bukaera
+	private static void datuakGorde(String[] izenak, String[] egoerak, double[] kaloriak, double[] gantzak,
+			double[] proteinak, double[] karbohidratoak, String[] motak) {
+
+		
+		File file = new File("datuak/janariak.txt");
+		try {
+			PrintWriter printWriter = new PrintWriter(file);
+			
+			for (int i = 0; i < izenak.length; i++) {
+
+				String lerroa = izenak[i] + ";" + egoerak[i] + ";" + kaloriak[i] + ";" 
+						+ proteinak[i] + ";" + gantzak[i]
+						+ ";" + karbohidratoak[i] + ";" + motak[i];
+				printWriter.println(lerroa.replace('.', ','));
+
+			}
+			printWriter.close();
+
+		} catch (FileNotFoundException e) {
+
+			e.printStackTrace();
+		}
+
+	}
 
 	static void fruituLehorrakZerrendatu(String[] izenak, String[] egoerak, double[] kaloriak, double[] gantzak,
 			double[] proteinak, double[] karbohidratoak, String[] motak) {
 
-		for(int i = 0; i<izenak.length;i++){
-			
-			if(motak[i].equals("fruto seco")){
-				System.out.println("Janari izena: " + izenak[i] 
-									+ "\n\tEgoera: " + egoerak[i] 
-									+ "\n\tKaloriak: " 	+ kaloriak[i]);
-			}
-			
-		}
-		
-	}//fruituLehorrakZerrendatu bukaera
+		for (int i = 0; i < izenak.length; i++) {
 
-}//class bukaera
+			if (motak[i].equals("fruto seco")) {
+				System.out.println(
+						"Janari izena: " + izenak[i] + "\n\tEgoera: " + egoerak[i] + "\n\tKaloriak: " + kaloriak[i]);
+			}
+
+		}
+
+	}// fruituLehorrakZerrendatu bukaera
+
+}// class bukaera
