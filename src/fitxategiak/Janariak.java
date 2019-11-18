@@ -55,7 +55,12 @@ public class Janariak {
 		int aukera;
 		do {
 			// menua erakutsi
-			System.out.println("----MENUA----\n0-irten\n1- fruitu lehorrak zerrendatu\n2- kaloria gehien dituena ikusi\n3- janari motak zerrendatu");
+			System.out.println("----MENUA----\n"
+					+ "0-irten\n"
+					+ "1- fruitu lehorrak zerrendatu\n"
+					+ "2- kaloria gehien dituena ikusi\n"
+					+ "3- janari motak zerrendatu\n"
+					+ "4- kaloriak aldatu");
 
 			// aukera irakurri
 			aukera = Integer.parseInt(scanTeklatua.nextLine());
@@ -71,6 +76,9 @@ public class Janariak {
 			case 3:
 				janariMotakZerrendatu(motak);
 				break;
+			case 4:
+				janariariKaloriakAldatu(izenak, egoerak, kaloriak);
+				break;
 			case 0:
 				datuakGorde(izenak, egoerak, kaloriak, gantzak, proteinak, karbohidratoak, motak);
 				System.out.println("Programa zarratzera doa...");
@@ -83,6 +91,44 @@ public class Janariak {
 		} while (aukera != 0);
 
 	}// main bukaera
+
+	private static void janariariKaloriakAldatu(String[] izenak, String[] egoerak, double[] kaloriak) {
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Idatzi janari izen bat");
+		String izena = scan.nextLine();
+		System.out.println("Idatzi janariaren egoera bat");
+		String egoera = scan.nextLine();
+		
+		int janariIndezea = bilatuJanaria(izenak, egoerak, izena, egoera);
+		
+		if(janariIndezea != -1){
+			//datuak erakutsi
+			System.out.println(izenak[janariIndezea] + " - " + egoerak[janariIndezea] + ": " + kaloriak[janariIndezea] + " cal");
+			
+			//kalorien datu berria eskatu
+			System.out.println("Idatzi kaloria berriak");
+			double kaloriaBerriak = Double.parseDouble(scan.nextLine());
+			
+			//informazioa eguneratu
+			kaloriak[janariIndezea] = kaloriaBerriak;
+		}else{
+			System.out.println("Janaria ez da aurkitu");
+		}
+		
+		
+	}
+
+	private static int bilatuJanaria(String[] izenak, String[] egoerak, String izena, String egoera) {
+		for(int i = 0; i< izenak.length; i++){
+			if(izenak[i].equals(izena) && egoerak[i].equals(egoera)){
+				return i; //janaria aurkitu da, i > 0
+			}
+		}
+		
+		return -1; //janaria ez da aurkitu
+	}
+	
 
 	private static void janariMotakZerrendatu(String[] motak) {
 		String[] motaDesberdinak = new String[50];
