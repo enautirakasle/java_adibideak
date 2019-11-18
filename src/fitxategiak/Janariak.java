@@ -55,7 +55,7 @@ public class Janariak {
 		int aukera;
 		do {
 			// menua erakutsi
-			System.out.println("----MENUA----\n0-irten\n1- fruitu lehorrak zerrendatu\n2- kaloria gehien dituena ikusi");
+			System.out.println("----MENUA----\n0-irten\n1- fruitu lehorrak zerrendatu\n2- kaloria gehien dituena ikusi\n3- janari motak zerrendatu");
 
 			// aukera irakurri
 			aukera = Integer.parseInt(scanTeklatua.nextLine());
@@ -67,6 +67,9 @@ public class Janariak {
 				break;
 			case 2:
 				janariKalorikoenaBistaratu(izenak, egoerak, kaloriak, gantzak, proteinak, karbohidratoak, motak);
+				break;
+			case 3:
+				janariMotakZerrendatu(motak);
 				break;
 			case 0:
 				datuakGorde(izenak, egoerak, kaloriak, gantzak, proteinak, karbohidratoak, motak);
@@ -80,6 +83,47 @@ public class Janariak {
 		} while (aukera != 0);
 
 	}// main bukaera
+
+	private static void janariMotakZerrendatu(String[] motak) {
+		String[] motaDesberdinak = new String[50];
+		for(int i = 0; i<motaDesberdinak.length; i++){
+			motaDesberdinak[i] = "";
+		}
+		
+		int kont = 0;
+		
+		for(int i = 0; i<motak.length; i++){
+			if(!badago(motak[i], motaDesberdinak)){
+				
+				motaDesberdinak[kont] = motak[i];
+				kont++;
+			}
+			
+		}
+		
+		//motaDesberdinakInprimatu
+		for(int i = 0; i< motaDesberdinak.length;i++){
+			if(motaDesberdinak[i].equals("")){
+				break;
+			}
+			System.out.println(motaDesberdinak[i]);
+			
+		}
+		
+	}
+
+	private static boolean badago(String mota, String[] motaDesberdinak) {
+		for(int i =0; i<motaDesberdinak.length;i++){
+			if(motaDesberdinak[i] == null){
+				return false;
+			}
+			if(motaDesberdinak[i].equals(mota)){
+				return true;
+			}
+		}
+		
+		return false;
+	}
 
 	private static void janariKalorikoenaBistaratu(String[] izenak, String[] egoerak, double[] kaloriak,
 			double[] gantzak, double[] proteinak, double[] karbohidratoak, String[] motak) {
