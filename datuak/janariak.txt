@@ -29,7 +29,7 @@ coldebruselas;cruda;42,0;3,8;0,5;8,2;hotaliza
 coldebruselas;cocidas;20,0;3,1;0,4;5,1;hotaliza
 colrizada;cruda;33,0;3,2;0,4;5,2;hotaliza
 coliflor;cruda;28,0;2,3;0,2;5,04;hotaliza
-coliflor;cocidacrudo;20,0;1,9;0,7;3,0;hotaliza
+coliflor;cocida;20,0;1,9;0,7;3,0;hotaliza
 colinabo;crudo;33,0;2,2;0,1;6,8;hotaliza
 champiñon;crudo;27,0;3,7;0,2;3,7;hotaliza
 chirivia;crudo;5,8;1,5;0,5;13,5;hotaliza
