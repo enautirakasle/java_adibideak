@@ -60,7 +60,8 @@ public class Janariak {
 					+ "1- fruitu lehorrak zerrendatu\n"
 					+ "2- kaloria gehien dituena ikusi\n"
 					+ "3- janari motak zerrendatu\n"
-					+ "4- kaloriak aldatu");
+					+ "4- kaloriak aldatu"
+					+ "5- janariari propietateak aldatu");
 
 			// aukera irakurri
 			aukera = Integer.parseInt(scanTeklatua.nextLine());
@@ -78,7 +79,12 @@ public class Janariak {
 				break;
 			case 4:
 				janariariKaloriakAldatu(izenak, egoerak, kaloriak);
+				//datuakGorde(izenak, egoerak, kaloriak, gantzak, proteinak, karbohidratoak, motak);
 				break;
+			case 5:
+				//TODO metodoa
+				break;
+
 			case 0:
 				datuakGorde(izenak, egoerak, kaloriak, gantzak, proteinak, karbohidratoak, motak);
 				System.out.println("Programa zarratzera doa...");
@@ -122,7 +128,7 @@ public class Janariak {
 	private static int bilatuJanaria(String[] izenak, String[] egoerak, String izena, String egoera) {
 		for(int i = 0; i< izenak.length; i++){
 			if(izenak[i].equals(izena) && egoerak[i].equals(egoera)){
-				return i;
+				return i; //janaria aurkitu da, i > 0
 			}
 		}
 		return -1;
