@@ -14,9 +14,13 @@ public class Pertsona {
 		
 	}
 	
-	public Pertsona(String izena){
+	public Pertsona(String izena, String abizena1, String abizena2){
 		this.izena = izena;
+		this.abizena1 = abizena1;
+		this.abizena2 = abizena2;
 	}
+	
+	
 	
 	/**
 	 * @return the izena
