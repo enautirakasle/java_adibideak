@@ -3,14 +3,19 @@ package opp.aurikularrak;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class MainAList {
+	//menu nagusiko aukerak
 	private static final int IRTEN = 0;
 	private static final int CREATE = 1;
 	private static final int READ = 2;
 	private static final int UPDATE = 3;
 	private static final int DELETE = 4;
+	
+	//kontsulten menuko aukerak
+	private static final int PREZIOA = 1;
 
 	public static void main(String[] args) {
 
@@ -32,7 +37,9 @@ public class MainAList {
 			case CREATE:
 				aurikularraGehitu(aurikularrak);
 				break;
-
+			case READ:
+				kontsultak(aurikularrak);
+			break;
 			default:
 				break;
 			}
@@ -40,6 +47,52 @@ public class MainAList {
 		} while (aukera != IRTEN);
 
 	}// main
+
+	private static void kontsultak(ArrayList<Aurikular> aurikularrak) {
+		Scanner scan = new Scanner(System.in);
+		int aukera;
+		do{
+			kontsultenMenua();
+			aukera = Integer.parseInt(scan.nextLine());
+			
+			switch (aukera) {
+			case PREZIOA:
+				preziozFiltratu(aurikularrak);
+				break;
+
+			default:
+				break;
+			}
+		}while(aukera != IRTEN);
+		
+	}
+	
+	private static void kontsultenMenua() {
+		System.out.println(PREZIOA + "- prezioz filtratu");
+		System.out.println(IRTEN + "- irten");
+	}
+
+	private static void preziozFiltratu(ArrayList<Aurikular> aurikularrak) {
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Idatzi prezio minimoa");
+		int prezioMin = Integer.parseInt(scan.nextLine());
+		System.out.println("Idatzi prezio maximoa");
+		int prezioMax = Integer.parseInt(scan.nextLine());
+		
+		Iterator<Aurikular> i = aurikularrak.iterator();
+		
+		while(i.hasNext()){
+			Aurikular aurikularra = i.next();
+			
+			if(aurikularra.getPrezioa() > prezioMin && aurikularra.getPrezioa() < prezioMax){
+				aurikularra.pantailaratu();
+			}
+		}
+		
+	}
+
+
 
 	private static void aurikularraGehitu(ArrayList<Aurikular> aurikularrak) {
 		Scanner scan = new Scanner(System.in);
