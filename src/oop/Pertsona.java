@@ -20,11 +20,6 @@ public class Pertsona {
 		this.abizena2 = abizena2;
 	}
 	
-	public Pertsona(){
-		
-	}
-	
-	
 	
 	/**
 	 * @return the izena
