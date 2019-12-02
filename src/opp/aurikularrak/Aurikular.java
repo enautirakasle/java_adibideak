@@ -10,7 +10,7 @@ public class Aurikular {
 	
 	//metodoak
 	public void pantailaratu(){
-		System.out.println();
+		System.out.println(this.izena + " - " + this.marka + ": " + this.prezioa + "E");
 	}
 	
 	/**
@@ -37,29 +37,45 @@ public class Aurikular {
 	public void setMarka(String marka) {
 		this.marka = marka;
 	}
+	
 	/**
 	 * @return the prezioa
 	 */
 	public double getPrezioa() {
 		return prezioa;
 	}
+	
 	/**
 	 * @param prezioa the prezioa to set
 	 */
 	public void setPrezioa(double prezioa) {
-		this.prezioa = prezioa;
+		if(prezioa < 0){
+			this.prezioa = 0;
+			System.out.println("Prezio negatiborik ez da onartzen");
+		}else{
+			this.prezioa = prezioa;
+		}
+		
 	}
+	
 	/**
 	 * @return the stocka
 	 */
 	public int getStocka() {
 		return stocka;
 	}
+	
 	/**
 	 * @param stocka the stocka to set
 	 */
 	public void setStocka(int stocka) {
-		this.stocka = stocka;
+		if(stocka >= 0){
+			this.stocka = stocka;
+		}else{
+			this.stocka = 0;
+			System.out.println("Stocka ezin da izan negatiboa");
+		}
+		
 	}
 	
 	

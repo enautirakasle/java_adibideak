@@ -20,13 +20,17 @@ public class Pertsona {
 		this.abizena2 = abizena2;
 	}
 	
+	public Pertsona(){
+		
+	}
+	
 	
 	
 	/**
 	 * @return the izena
 	 */
 	public String getIzena() {
-		return izena;
+		return this.izena;
 	}
 	/**
 	 * @param izena the izena to set

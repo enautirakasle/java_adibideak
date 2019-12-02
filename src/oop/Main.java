@@ -7,27 +7,18 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		// Pertsona klaseko objetu bat sortu eraikitzailea (constructor) erabiliz.
-		Pertsona p = new Pertsona("Iker");
+		Pertsona p = new Pertsona();
+		p.getIzena();
 		
+		Pertsona galder = new Pertsona();
+		galder.setIzena("Galder");
 		
-		
-		System.out.println("Idatzi adina");
-		int adina = Integer.parseInt(scan.nextLine());
-		
-		p.setAdina(adina);
-		
-		System.out.println("Idatzi telefonoa");
-		String tel = scan.nextLine();
-		
-		p.setTelefonoa(tel);
-		
-		System.out.println("Izena: " + p.getIzena());
-		System.out.println("Adina: " + p.getAdina());
-		System.out.println("Telf.: " +  p.getTelefonoa());
+		Pertsona enaut = new Pertsona();
+		enaut.setIzena("Enaut");
 		
 	
-		
-		
+		System.out.println(galder.getIzena());
+	
 	}
 
 }
