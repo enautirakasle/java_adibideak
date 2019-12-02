@@ -26,8 +26,9 @@ public class Main {
 		pantailaratuZenb1(zenbakiak);
 		pantailaratuZenb2(zenbakiak);
 		
-		adinTxikiakEzabatu1(zenbakiak);
-		System.out.println("--------------");
+		adinTxikiakEzabatu2(zenbakiak);
+		
+		pantailaratuZenb1(zenbakiak);
 		pantailaratuZenb2(zenbakiak);
 	}
 
