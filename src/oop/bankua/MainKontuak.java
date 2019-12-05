@@ -35,7 +35,8 @@ public class MainKontuak {
 	}
 	
 	static void menuNagusia(){
-		System.out.println("--Menua--\n"
+
+		System.out.println("--Menua--"
 				+ IRTEN + " - irten");
 	}
 }
