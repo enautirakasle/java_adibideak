@@ -38,6 +38,10 @@ public class MainKontuak {
 			switch (aukera) {
 			case INGRESOA_EGIN:
 				ingresoaEgin(kontuKorronteak);
+				
+				break;
+			case KONTUA_IKUSI:
+				kontuaIkusi(kontuKorronteak);
 				break;
 
 			default:
@@ -52,6 +56,24 @@ public class MainKontuak {
 		
 	}
 	
+	private static void kontuaIkusi(ArrayList<KontuKorrontea> kontuKorronteak) {
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Idatzi kontsultatu nahi den kontuaren zenbakia");
+		String kontuZenbakia = scan.nextLine();
+		
+		for (int i = 0; i < kontuKorronteak.size(); i++) {
+			KontuKorrontea kontuKorrontea = kontuKorronteak.get(i);
+
+			if(kontuKorrontea.getKontuZenbakia().equals(kontuZenbakia)){//kontuZenbakia eta uneko Kontu koroontearen zenbakia berdinak badira
+				kontuKorrontea.pantailaratu();
+				break;
+			}	
+		}
+		
+		
+	}
+
 	private static void ingresoaEgin(ArrayList<KontuKorrontea> kontuKorronteak) {
 		Scanner scan = new Scanner(System.in);
 		
@@ -68,6 +90,9 @@ public class MainKontuak {
 				//ingresaoa egin eta forretik atera
 				kontuKorrontea.ingresatu(kopurua);
 				
+				System.out.println("Ingresoa egin da");
+				kontuKorrontea.pantailaratu();
+				
 				break;
 			}	
 		}
@@ -78,6 +103,7 @@ public class MainKontuak {
 
 		System.out.println("--Menua--\n"
 				+ INGRESOA_EGIN + "- ingresoa egin"
+				+ KONTUA_IKUSI + "- kontua ikusi"
 				+ IRTEN + " - irten");
 	}
 }
