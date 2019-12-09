@@ -3,6 +3,9 @@ package oop.bankua;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
+
+
 public class MainKontuak {
 	
 	static final int IRTEN = 0;
