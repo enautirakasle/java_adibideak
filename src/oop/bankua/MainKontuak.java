@@ -1,6 +1,7 @@
 package oop.bankua;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class MainKontuak {
 	
@@ -28,20 +29,55 @@ public class MainKontuak {
 		//kontua listara gehitu
 		kontuKorronteak.add(kontuKorrontea);
 		
+		Scanner scan = new Scanner(System.in);
+		int aukera;
+		do{
+			menuNagusia();
+			aukera = Integer.parseInt(scan.nextLine());
 			
-		//do while
-		//	menua
-		//	aukera irakurri
-		//	swicha
+			switch (aukera) {
+			case INGRESOA_EGIN:
+				ingresoaEgin(kontuKorronteak);
+				break;
+
+			default:
+				System.out.println("Aukera okerra");
+				break;
+			}
+		}while(aukera!=IRTEN);
+
 		
 		
 		
 		
 	}
 	
+	private static void ingresoaEgin(ArrayList<KontuKorrontea> kontuKorronteak) {
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Idatzi ingresoa egin nahi den KK zenbakia");
+		String kontuZenbakia = scan.nextLine();
+		
+		System.out.println("Idatzi ingresatu nahi den diru kopurua");
+		double kopurua = Double.parseDouble(scan.nextLine());
+		
+		for (int i = 0; i < kontuKorronteak.size(); i++) {
+			KontuKorrontea kontuKorrontea = kontuKorronteak.get(i);
+
+			if(kontuKorrontea.getKontuZenbakia().equals(kontuZenbakia)){//kontuZenbakia eta uneko Kontu koroontearen zenbakia berdinak badira
+				//ingresaoa egin eta forretik atera
+				kontuKorrontea.ingresatu(kopurua);
+				
+				break;
+			}	
+		}
+
+	}
+
 	static void menuNagusia(){
 
-		System.out.println("--Menua--"
+		System.out.println("--Menua--\n"
+				+ INGRESOA_EGIN + "- ingresoa egin"
 				+ IRTEN + " - irten");
 	}
 }
