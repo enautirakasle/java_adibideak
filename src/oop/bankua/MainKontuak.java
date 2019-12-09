@@ -17,13 +17,18 @@ public class MainKontuak {
 		ArrayList<KontuKorrontea> kontuKorronteak = new ArrayList<KontuKorrontea>();
 		
 		//kontu konrronte bat sortu
+		KontuKorrontea kontuKorrontea = new KontuKorrontea();
 		
 		//balio literalekin bete
+		kontuKorrontea.setKontuZenbakia("1111 1111");
+		kontuKorrontea.setSaldoa(1000);
+		kontuKorrontea.setTitularIzena("Enaut");
+		kontuKorrontea.setUrtekoInteresa(0.1);
 		
 		//kontua listara gehitu
+		kontuKorronteak.add(kontuKorrontea);
 		
-		
-		
+			
 		//do while
 		//	menua
 		//	aukera irakurri
