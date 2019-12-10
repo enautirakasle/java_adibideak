@@ -15,6 +15,8 @@ public class MainKontuTraining {
 		
 		//titular izen bat eskatu eta titular horren kontuak pantailaratu
 		
+		//saldo bat eskatu eta hori baino gehiago dituzten kontuak pantailaraatu
+		
 		//saldo negatiboa duten kontuak pantailaratu
 		
 		//saloden media pantailaratu
