@@ -26,6 +26,14 @@ public class MainKontuak {
 		kontuKorrontea.setTitularIzena("Enaut");
 		kontuKorrontea.setUrtekoInteresa(0.1);
 		
+		kontuKorronteak.add(kontuKorrontea);
+		
+		kontuKorrontea = new KontuKorrontea();
+		kontuKorrontea.setKontuZenbakia("2222 2222");
+		kontuKorrontea.setSaldoa(2000);
+		kontuKorrontea.setTitularIzena("Aritz");
+		kontuKorrontea.setUrtekoInteresa(0.2);
+		
 		//kontua listara gehitu
 		kontuKorronteak.add(kontuKorrontea);
 		
@@ -65,33 +73,35 @@ public class MainKontuak {
 		System.out.println("Idatzi dirua atera nahi den kontuaren zenbakia");
 		String kontuZenbakia = scan.nextLine();
 		
+		KontuKorrontea kontuKorrontea = null;
+		boolean aurkitua = false;
+		
 		//kontuZenbakia kontuKorronteak arrayan bilatu eta informazioa pantailaratu.
 		for (int i = 0; i < kontuKorronteak.size(); i++) {
-			KontuKorrontea kontuKorrontea = kontuKorronteak.get(i);
+			kontuKorrontea = kontuKorronteak.get(i);
 
 			if(kontuKorrontea.getKontuZenbakia().equals(kontuZenbakia)){//kontuZenbakia eta uneko Kontu koroontearen zenbakia berdinak badira
+				aurkitua= true;
+				break;
+			}	
+		}
+		
+		if(aurkitua){
+			kontuKorrontea.pantailaratu();
+			
+			System.out.println("Zenbat diru atera nahi duzu?");
+			double kopurua = Double.parseDouble(scan.nextLine());
+						
+			if (!kontuKorrontea.saldoaGorrian()){
+				kontuKorrontea.diruaAtera(kopurua);
 				kontuKorrontea.pantailaratu();
-				break;
-			}	
+			}else{
+				System.out.println("Ezin da dirurik atera!!! Saldoa gorrian");
+			}
+		}else{
+			System.out.println(kontuZenbakia + " ez da existitzen");
 		}
 		
-		System.out.println("Zenbat diru atera nahi duzu?");
-		double kopurua = Double.parseDouble(scan.nextLine());
-		
-		//kontuZenbakia kontuKorronteak arrayan bilatu eta informazioa pantailaratu.
-		for (int i = 0; i < kontuKorronteak.size(); i++) {
-			KontuKorrontea kontuKorrontea = kontuKorronteak.get(i);
-
-			if(kontuKorrontea.getKontuZenbakia().equals(kontuZenbakia)){//kontuZenbakia eta uneko Kontu koroontearen zenbakia berdinak badira
-				if (!kontuKorrontea.saldoaGorrian()){
-					kontuKorrontea.diruaAtera(kopurua);
-					kontuKorrontea.pantailaratu();
-				}else{
-					System.out.println("Ezin da dirurik atera!!! Saldoa gorrian");
-				}
-				break;
-			}	
-		}
 
 	}
 
