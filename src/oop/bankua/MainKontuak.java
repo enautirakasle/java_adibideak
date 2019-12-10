@@ -1,5 +1,8 @@
 package oop.bankua;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -17,25 +20,10 @@ public class MainKontuak {
 	public static void main(String[] args) {
 		ArrayList<KontuKorrontea> kontuKorronteak = new ArrayList<KontuKorrontea>();
 		
-		//kontu konrronte bat sortu
-		KontuKorrontea kontuKorrontea = new KontuKorrontea();
 		
-		//balio literalekin bete
-		kontuKorrontea.setKontuZenbakia("1111 1111");
-		kontuKorrontea.setSaldoa(1000);
-		kontuKorrontea.setTitularIzena("Enaut");
-		kontuKorrontea.setUrtekoInteresa(0.1);
+		datuakKargatu(kontuKorronteak);
 		
-		kontuKorronteak.add(kontuKorrontea);
-		
-		kontuKorrontea = new KontuKorrontea();
-		kontuKorrontea.setKontuZenbakia("2222 2222");
-		kontuKorrontea.setSaldoa(2000);
-		kontuKorrontea.setTitularIzena("Aritz");
-		kontuKorrontea.setUrtekoInteresa(0.2);
-		
-		//kontua listara gehitu
-		kontuKorronteak.add(kontuKorrontea);
+
 		
 		Scanner scan = new Scanner(System.in);
 		int aukera;
@@ -61,7 +49,7 @@ public class MainKontuak {
 			}
 		}while(aukera!=IRTEN);
 
-		
+		datuakGorde(kontuKorronteak);
 		
 		
 		
@@ -75,7 +63,6 @@ public class MainKontuak {
 		
 		KontuKorrontea kontuKorrontea = null;
 		boolean aurkitua = false;
-		
 		//kontuZenbakia kontuKorronteak arrayan bilatu eta informazioa pantailaratu.
 		for (int i = 0; i < kontuKorronteak.size(); i++) {
 			kontuKorrontea = kontuKorronteak.get(i);
@@ -155,5 +142,55 @@ public class MainKontuak {
 				+ DIRUA_ATERA + " - dirua atera"
 				+ KONTUA_IKUSI + "- kontua ikusi"
 				+ IRTEN + " - irten");
+	}
+	
+	/*
+	 * Author: Galdez Gomez
+	 */
+	private static void datuakKargatu(ArrayList<KontuKorrontea> kontuak) {
+		File fitxategia = new File("datuak/kontuak.txt");
+		try {
+			Scanner scan = new Scanner(fitxategia);
+			String lerroa;
+			String[] zatiak;
+			KontuKorrontea kontuKorrontea;
+
+			while (scan.hasNext()) {
+				lerroa = scan.nextLine();
+				zatiak = lerroa.split(";");
+				kontuKorrontea = new KontuKorrontea();
+				kontuKorrontea.setKontuZenbakia(zatiak[0]);
+				kontuKorrontea.setTitularIzena(zatiak[1]);
+				kontuKorrontea.setSaldoa(Double.parseDouble(zatiak[2]));
+				kontuKorrontea.setUrtekoInteresa(Double.parseDouble(zatiak[3]));
+
+				kontuak.add(kontuKorrontea);
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	}
+	
+	/*
+	 * Author: Galdez Gomez
+	 */
+	private static void datuakGorde(ArrayList<KontuKorrontea> kontuak) {
+		try {
+			PrintWriter writer = new PrintWriter("datuak/kontuak.txt");
+
+			String lerroa;
+			for (int i = 0; i < kontuak.size(); i++) {
+				lerroa = kontuak.get(i).getKontuZenbakia() + ";" + kontuak.get(i).getTitularIzena() + ";"
+						+ kontuak.get(i).getSaldoa() + ";" + kontuak.get(i).getUrtekoInteresa();
+				writer.println(lerroa);
+
+			}
+
+			writer.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
 	}
 }
