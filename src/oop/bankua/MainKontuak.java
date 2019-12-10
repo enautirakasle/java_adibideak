@@ -40,6 +40,9 @@ public class MainKontuak {
 				ingresoaEgin(kontuKorronteak);
 				
 				break;
+			case DIRUA_ATERA:
+				diruaAtera(kontuKorronteak);
+				break;
 			case KONTUA_IKUSI:
 				kontuaIkusi(kontuKorronteak);
 				break;
@@ -56,6 +59,42 @@ public class MainKontuak {
 		
 	}
 	
+	private static void diruaAtera(ArrayList<KontuKorrontea> kontuKorronteak) {
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Idatzi dirua atera nahi den kontuaren zenbakia");
+		String kontuZenbakia = scan.nextLine();
+		
+		//kontuZenbakia kontuKorronteak arrayan bilatu eta informazioa pantailaratu.
+		for (int i = 0; i < kontuKorronteak.size(); i++) {
+			KontuKorrontea kontuKorrontea = kontuKorronteak.get(i);
+
+			if(kontuKorrontea.getKontuZenbakia().equals(kontuZenbakia)){//kontuZenbakia eta uneko Kontu koroontearen zenbakia berdinak badira
+				kontuKorrontea.pantailaratu();
+				break;
+			}	
+		}
+		
+		System.out.println("Zenbat diru atera nahi duzu?");
+		double kopurua = Double.parseDouble(scan.nextLine());
+		
+		//kontuZenbakia kontuKorronteak arrayan bilatu eta informazioa pantailaratu.
+		for (int i = 0; i < kontuKorronteak.size(); i++) {
+			KontuKorrontea kontuKorrontea = kontuKorronteak.get(i);
+
+			if(kontuKorrontea.getKontuZenbakia().equals(kontuZenbakia)){//kontuZenbakia eta uneko Kontu koroontearen zenbakia berdinak badira
+				if (!kontuKorrontea.saldoaGorrian()){
+					kontuKorrontea.diruaAtera(kopurua);
+					kontuKorrontea.pantailaratu();
+				}else{
+					System.out.println("Ezin da dirurik atera!!! Saldoa gorrian");
+				}
+				break;
+			}	
+		}
+
+	}
+
 	private static void kontuaIkusi(ArrayList<KontuKorrontea> kontuKorronteak) {
 		Scanner scan = new Scanner(System.in);
 		
@@ -103,6 +142,7 @@ public class MainKontuak {
 
 		System.out.println("--Menua--\n"
 				+ INGRESOA_EGIN + "- ingresoa egin"
+				+ DIRUA_ATERA + " - dirua atera"
 				+ KONTUA_IKUSI + "- kontua ikusi"
 				+ IRTEN + " - irten");
 	}
