@@ -23,6 +23,8 @@ public class MainKontuTraining {
 		
 		//saldoen batura pantailaratu
 		
+		//ablalaldsldsa 
+		
 		//kontu zenbaki bat eskatu eta kontu horren informazioa pantailaratu
 		
 		//titular bat eskatu eta zenbat kontu dituen pantaialaratu.
