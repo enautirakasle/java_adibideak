@@ -1,4 +1,4 @@
-package opp.aurikularrak;
+package oop.aurikularrak;
 
 public class Aurikular {
 	

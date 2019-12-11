@@ -1,4 +1,4 @@
-package opp.aurikularrak;
+package oop.aurikularrak;
 
 import java.io.File;
 import java.io.FileNotFoundException;
