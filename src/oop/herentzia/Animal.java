@@ -7,7 +7,7 @@ public class Animal {
 	
 	
 	public void sacarRuido(){
-		System.out.println("Soy " + this.nombreEspecie + ": Kin kan kun");
+		System.out.println("Soy un animaaaal! Un " + this.nombreEspecie + ", iuuuuuujuuuuu!!!");
 	}
 	
 	
