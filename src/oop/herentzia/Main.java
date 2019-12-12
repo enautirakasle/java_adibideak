@@ -27,6 +27,10 @@ public class Main {
 		
 		p1.ladrar(numLadridos);
 		
+		Loro l1 = new Loro();
+		l1.hablar("quiero chocolate");
+		
+
 		
 		System.out.println();
 
