@@ -5,6 +5,12 @@ public class Animal {
 	private String nombreEspecie;
 	private int numPatas;
 	
+	
+	public void sacarRuido(){
+		System.out.println("Soy " + this.nombreEspecie + ": Kin kan kun");
+	}
+	
+	
 	/**
 	 * @return the nombreEspecie
 	 */

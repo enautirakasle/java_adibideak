@@ -6,31 +6,19 @@ public class Main {
 
 	public static void main(String[] args) {
 		Animal a1 = new Animal();
+		a1.setNombreEspecie("burro");
 		
 		Ballena b1 = new Ballena();
+		b1.setNombreEspecie("ballena blanca");
 		
-		b1.setNombreEspecie("ballena");
-		b1.setNumPatas(0);
+		Ornitorrinco o1 = new Ornitorrinco();
+		o1.setNombreEspecie("ornitorrinco");
 		
-		a1.setNombreEspecie("burro");
-		a1.setNumPatas(4);
-	
-		b1.setOceano("atlantico");
-		
-		Perro p1 = new Perro();
-		p1.setNumPatas(4);
-		p1.setRaza("caniche");
-		
-		Scanner scan = new Scanner(System.in);
-		System.out.println("Idatzi txakurrak zenbat zaunka egitea nahi duzun");
-		int numLadridos = Integer.parseInt(scan.nextLine());
-		
-		p1.ladrar(numLadridos);
-		
-		Loro l1 = new Loro();
-		l1.hablar("quiero chocolate");
-		
+		a1.sacarRuido();
+		b1.sacarRuido();
+		o1.sacarRuido();
 
+		
 		
 		System.out.println();
 

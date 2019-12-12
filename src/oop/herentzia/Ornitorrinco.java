@@ -1,6 +1,6 @@
 package oop.herentzia;
 
-public class Onitorrinco extends Animal{
+public class Ornitorrinco extends Animal{
 
 	private boolean enReserva;
 	private int peso;	//en gramos

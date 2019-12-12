@@ -11,6 +11,7 @@ public class Ballena extends Animal{
 		return oceano;
 	}
 
+
 	/**
 	 * @param oceano the oceano to set
 	 */
