@@ -11,7 +11,10 @@ public class Ballena extends Animal{
 		return oceano;
 	}
 
-
+	public void sacarRuido(){
+		System.out.println("Soy una ballena, glu glu glu.");
+	}
+	
 	/**
 	 * @param oceano the oceano to set
 	 */
