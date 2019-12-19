@@ -2,7 +2,8 @@ package oop.abstraktuak;
 
 import java.util.Date;
 
-public class Persona {
+public abstract class Persona {
+	
 	protected String nombre;
 	protected String dni;
 	protected Date fechaNacimiento;
@@ -11,6 +12,8 @@ public class Persona {
 		this.nombre = nombre;
 		this.dni = dni;
 	}
+	
+	public abstract void esan(String esaldia);
 	
 	public String getNombre() {
 		return nombre;

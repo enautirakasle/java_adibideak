@@ -26,5 +26,9 @@ public class Alumno extends Persona{
 		this.modulosMatriculados = modulosMatriculados;
 	}
 	
+	public void esan(String esaldia){
+		System.out.println("Ikaslea naiz" + esaldia);
+	}
+	
 	
 }

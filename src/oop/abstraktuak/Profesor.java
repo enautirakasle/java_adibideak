@@ -24,4 +24,10 @@ public class Profesor extends Persona{
 	public void setModulosImpartidos(ArrayList<Modulo> modulosImpartidos) {
 		this.modulosImpartidos = modulosImpartidos;
 	}
+
+	@Override
+	public void esan(String esaldia) {
+		System.out.println("Irakaslea naiz " + esaldia);
+		
+	}
 }
