@@ -84,6 +84,8 @@ public class Main {
 			pstDelete.execute();
 			//delete bukaera
 			
+			conexion.close();
+			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
