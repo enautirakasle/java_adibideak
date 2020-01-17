@@ -18,6 +18,7 @@ public class MainSelect {
 		int id;
 		String nombre, apellido, dni, password;
 		boolean esAdmin;
+		Usuario usuario;
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -33,15 +34,24 @@ public class MainSelect {
 			System.out.println("Erabiltzaile guztien zerrenda:");
 			System.out.println("**********************************************************************************");
 			while (rs.next()) {
+				
 				id = rs.getInt("id");
 				nombre = rs.getString("nombre");
 				apellido = rs.getString("apellido");
 				dni = rs.getString("dni");
 				password = rs.getString("password");
 				esAdmin = rs.getBoolean("admin");
+				
+				usuario = new Usuario();
+				usuario.setId(id);
+				usuario.setNombre(nombre);
+				usuario.setApellido(apellido);
+				usuario.setDni(dni);
+				usuario.setPassword(password);
+				usuario.setAdmin(esAdmin);
+				
 
-				System.out.println("id: " + id + ", nombre: " + nombre + ", apellido: " + apellido + "" + ", dni: "
-						+ dni + ", password: " + password + ", es admin: " + esAdmin);
+				System.out.println(usuario);
 			}
 			System.out.println("**********************************************************************************");
 			// select bukaera
