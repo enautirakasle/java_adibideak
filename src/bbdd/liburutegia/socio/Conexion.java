@@ -1,7 +1,7 @@
 package bbdd.liburutegia.socio;
 
 public abstract class Conexion {
-	private Conexion conexion;
+	protected Conexion conexion;
 	
 	Conexion(){
 		//TODO crear la conexion
