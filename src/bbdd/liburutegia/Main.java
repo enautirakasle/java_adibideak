@@ -95,10 +95,6 @@ public class Main {
 		
 	}
 
-	private static void editarLibro(String titulo, Connection conexion) {
-		//update
-		
-	}
 
 	/**
 	 * listara los libros que tengan parteTitulo en el titulo
@@ -154,7 +150,6 @@ public class Main {
 	}
 
 	
-
 	private static void menuPrincipal() {
 		System.out.println("\n---Menu---");
 		System.out.println(LISTAR_LIBROS + "- listar libros");
