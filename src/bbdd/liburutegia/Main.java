@@ -20,6 +20,7 @@ public class Main {
 	private static final int SALIR = 0;
 	private static final int LISTAR_LIBROS = 1;
 	private static final int BUSCAR = 2;
+	private static final int EDITAR_LIBRO = 3;
 	// ....................
 
 	public static void main(String[] args) {
@@ -55,12 +56,18 @@ public class Main {
 				
 				listarLibrosCon(parte, conexion);
 				break;
-			// TODO beste case guztiak hemen
-			/*
-			 * case BUSCAR_LIBROS: buscarLibros();
-			 * 
-			 * 
-			 */
+			case EDITAR_LIBRO:
+				System.out.println("Introduce un titulo para editar el libro");
+				String titulo = scan.nextLine();
+				
+				verLibro(titulo, conexion);
+				
+				System.out.println("Introduce el numero de paginas");
+				int numeroDePaginas = Integer.parseInt(scan.nextLine());
+				
+				editarLibro(titulo, numeroDePaginas, conexion);
+				break;
+			
 			case SALIR:
 				System.out.println("El programa se ha cerrado....");
 				break;
@@ -76,6 +83,21 @@ public class Main {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+
+	private static void editarLibro(String titulo, int numeroDePaginas, Connection conexion) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void verLibro(String titulo, Connection conexion) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void editarLibro(String titulo, Connection conexion) {
+		//update
+		
 	}
 
 	/**
@@ -137,6 +159,7 @@ public class Main {
 		System.out.println("\n---Menu---");
 		System.out.println(LISTAR_LIBROS + "- listar libros");
 		System.out.println(BUSCAR + "- buscar libros");
+		System.out.println(EDITAR_LIBRO + "- editar libro");
 
 	}
 
