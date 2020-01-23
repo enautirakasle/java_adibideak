@@ -1,6 +1,7 @@
 package bbdd.liburutegia.socio;
 
 import java.sql.Connection;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MainSocio {
@@ -57,7 +58,20 @@ public class MainSocio {
 			 * se ejecutara selectAll() de ModeloSocio
 			 * se recorrera el arrayList que devuelve mostrando todos los socios en pantalla
 			 */
+			ModeloSocio modeloSocio = new ModeloSocio("localhost", "biblioteca", "root", "");
+			ArrayList<Socio> socios = modeloSocio.selectAll();
+			imprimirSocios(socios);
 			
+		}
+
+
+
+		/**
+		 * socios arraylista errekorritu eta socio guztiak pantailan aterako ditu
+		 * @param socios Socio motako objektuz osatutako ArraLista
+		 */
+		private static void imprimirSocios(ArrayList<Socio> socios) {
+			//TODO
 			
 		}
 
