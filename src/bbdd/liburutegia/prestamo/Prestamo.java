@@ -39,6 +39,11 @@ public class Prestamo {
 		this.libro = libro;
 	}
 	
+	@Override
+	public String toString() {
+		return "Prestamo [fecha=" + fecha + ", devuelto=" + devuelto + ", socio=" + socio + ", libro=" + libro + "]";
+	}
+	
 	
 	
 	
