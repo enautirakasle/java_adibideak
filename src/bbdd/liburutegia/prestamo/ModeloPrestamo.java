@@ -1,5 +1,7 @@
 package bbdd.liburutegia.prestamo;
 
+import java.sql.Date;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -56,6 +58,25 @@ public class ModeloPrestamo extends Conexion{
 			e.printStackTrace();
 		}
 		return prestamos;
+	}
+	
+	public void finalizar(Prestamo prestamo){
+	
+		
+		try {
+			PreparedStatement pst = super.conexion.prepareStatement("UPDATE prestamos SET devuelto=true WHERE id_libro=? and id_socio=? and fecha=?");
+			pst.setInt(1, prestamo.getLibro().getId());
+			pst.setInt(2, prestamo.getSocio().getId());
+			pst.setDate(3, new java.sql.Date(prestamo.getFecha().getTime()));
+			
+			pst.execute();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+
 	}
 
 }
