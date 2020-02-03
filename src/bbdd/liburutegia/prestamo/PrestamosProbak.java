@@ -12,29 +12,17 @@ import bbdd.liburutegia.socio.Socio;
 public class PrestamosProbak {
 
 	public static void main(String[] args) {
-		try {
-			ModeloPrestamo pm = new ModeloPrestamo("localhost", "biblioteca", "root", "");
 
-			Prestamo prestamo = new Prestamo();
+		ModeloPrestamo pm = new ModeloPrestamo("localhost", "biblioteca", "root", "");
 
-			Libro libro = new Libro();
-			libro.setId(10);
-			prestamo.setLibro(libro);
+		ArrayList<Prestamo> prestamos = pm.prestamosDeLibro(17);
 
-			Socio socio = new Socio();
-			socio.setId(2);
-			prestamo.setSocio(socio);
-
-			// 2018-04-16
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-			Date fecha = sdf.parse("2018-04-16");
-			prestamo.setFecha(fecha);
-
-			pm.finalizar(prestamo);
-
-		} catch (ParseException e) {
-			e.printStackTrace();
+		Iterator<Prestamo> it = prestamos.iterator();
+		while (it.hasNext()) {
+			Prestamo prestamo = (Prestamo) it.next();
+			System.out.println(prestamo);
 		}
+
 	}
 
 }
